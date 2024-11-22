@@ -14,7 +14,8 @@
     "npm": "10.x"
   },
   "scripts": {
-    "start": "node --optimize_for_size --max_old_space_size=512 --gc_interval=100 index.js "
+  "dev": "node index.js",
+  "start": "node index.js",
   },
   "author": "Fanz",
   "license": "ISC",
