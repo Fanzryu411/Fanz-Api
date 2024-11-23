@@ -14,10 +14,14 @@
     "vercel:dev": "vercel dev",
     "vercel:build": "vercel build",
     "vercel:deploy": "vercel",
-    "vercel:deploy:prod": "vercel --prod"
+    "vercel:deploy:prod": "vercel --prod",
+    "build": "echo 'No build step required'"
   },
   "author": "Fanz",
   "license": "ISC",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "base-64": "^1.0.0",
