@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "dev": "node index.js",
     "vercel:dev": "vercel dev",
     "vercel:build": "vercel build",
     "vercel:deploy": "vercel",
