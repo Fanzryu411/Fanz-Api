@@ -10,7 +10,7 @@
     "message": "message"
   },
   "scripts": {
-    "start": "node api/api.js",
+    "start": "node api/index.js",
     "vercel:dev": "vercel dev",
     "vercel:build": "vercel build",
     "vercel:deploy": "vercel",
