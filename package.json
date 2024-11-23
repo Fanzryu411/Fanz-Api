@@ -20,7 +20,7 @@
   "author": "Fanz",
   "license": "ISC",
   "engines": {
-    "node": "22.x"
+    "node": "20.x"
   },
   "dependencies": {
     "axios": "^0.21.1",
