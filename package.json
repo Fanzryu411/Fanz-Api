@@ -9,9 +9,6 @@
     "lib": "lib",
     "message": "message"
   },
-  "engines": {
-    "node": "22.x"
-  },
   "scripts": {
     "start": "nodemon index.js",
     "vercel:dev": "vercel dev",
@@ -23,7 +20,7 @@
   "author": "Fanz",
   "license": "ISC",
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "dependencies": {
     "axios": "^0.21.1",
