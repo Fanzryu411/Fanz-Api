@@ -1,34 +1,4 @@
-const express = require('express');
-const cors = require('cors');
-const secure = require('ssl-express-www');
-const { color } = require('./lib/color.js');
-
-const PORT = process.env.PORT || 3000;
-
-const mainrouter = require('./routes/main');
-const apirouter = require('./routes/api');
-
-const app = express();
-app.enable('trust proxy');
-app.set('json spaces', 2);
-app.use(cors());
-app.use(secure);
-app.use(express.static('public'));
-
-// Routes
-app.use('/', mainrouter);
-app.use('/api', apirouter);
-
-// Server Listener (use Vercel's handler for better compatibility)
-if (process.env.VERCEL) {
-  module.exports = app; // Export for Vercel
-} else {
-  app.listen(PORT, () => {
-    console.log(color(`Server running on port ${PORT}`, 'green'));
-  });
-}
-
-/*/var express = require('express'),
+var express = require('express'),
     cors = require('cors'),
     secure = require('ssl-express-www');
 const PORT = process.env.PORT || 8080 || 5000 || 3000
@@ -51,4 +21,4 @@ app.listen(PORT, () => {
     console.log(color("Server running on port " + PORT,'green'))
 })
 
-module.exports = app*/
+module.exports = app
