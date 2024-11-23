@@ -1,24 +1,36 @@
-var express = require('express'),
-    cors = require('cors'),
-    secure = require('ssl-express-www');
-const PORT = process.env.PORT || 8080 || 5000 || 3000
-var { color } = require('./lib/color.js')
+import cors from 'cors';
+import sslRedirect from 'ssl-express-www';
+import path from 'path';
+import { color } from '../lib/color.js';  // Pastikan path-nya sesuai
+import mainrouter from '../routes/main';
+import apirouter from '../routes/api';
 
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
+export default function handler(req, res) {
+  // Enable trust proxy and set JSON formatting
+  res.setHeader('Content-Type', 'application/json');
+  res.statusCode = 200;
 
-var app = express()
-app.enable('trust proxy');
-app.set("json spaces",2)
-app.use(cors())
-app.use(secure)
-app.use(express.static("public"))
+  // Implement CORS
+  cors()(req, res, () => {});
 
-app.use('/', mainrouter)
-app.use('/api', apirouter)
+  // Force SSL redirection (secure)
+  sslRedirect()(req, res, () => {});
 
-app.listen(PORT, () => {
-    console.log(color("Server running on port " + PORT,'green'))
-})
+  // Static files serving (public folder)
+  if (req.method === 'GET' && req.url.startsWith('/public/')) {
+    const filePath = path.join(process.cwd(), 'public', req.url.split('/public/')[1]);
+    res.sendFile(filePath);
+    return;
+  }
 
-module.exports = app
+  // Route handling
+  if (req.url === '/' && req.method === 'GET') {
+    mainrouter(req, res);
+  } else if (req.url.startsWith('/api') && req.method === 'GET') {
+    apirouter(req, res);
+  } else {
+    res.status(404).json({ error: 'Not Found' });
+  }
+
+  console.log(color("Server running on port " + process.env.PORT || 3000, 'green'));
+}
