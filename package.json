@@ -14,7 +14,7 @@
     "npm": "10.x"
   },
   "scripts": {
-  "start": "node index.js",
+  "start": "node index.js"
   },
   "author": "Fanz",
   "license": "ISC",
