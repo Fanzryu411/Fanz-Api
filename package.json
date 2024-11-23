@@ -11,11 +11,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "vercel:dev": "vercel dev",
-    "vercel:build": "vercel build",
-    "vercel:deploy": "vercel",
-    "vercel:deploy:prod": "vercel --prod",
-    "build": "echo 'No build step required'"
   },
   "author": "Fanz",
   "license": "ISC",
