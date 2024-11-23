@@ -13,12 +13,12 @@ app.set("json spaces", 2);
 app.use(cors());
 app.use(secure);
 
-// Mengubah middleware express.static untuk melayani file statis dari folder 'routes'
-app.use(express.static("routes"));  // Menyajikan file statis dari folder routes
+// Menyajikan file statis dari folder 'views'
+app.use(express.static("views"));  // Menyajikan file statis dari folder views
 
-// Menambahkan route untuk mengakses index.html di folder routes
+// Menambahkan route untuk mengakses index.html di folder views
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: './routes' });  // Pastikan file index.html ada di folder routes
+    res.sendFile('index.html', { root: './views' });  // Pastikan file index.html ada di folder views
 });
 
 app.use('/api', apirouter);
