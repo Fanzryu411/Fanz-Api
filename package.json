@@ -9,10 +9,6 @@
     "lib": "lib",
     "message": "message"
   },
-  "engines": {
-    "node": "20.x",
-    "npm": "10.x"
-  },
   "scripts": {
   "start": "node index.js",
   "dev": "node index.js"
