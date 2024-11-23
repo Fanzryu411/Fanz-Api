@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/api.js", // Sesuaikan dengan path aplikasi Anda
+      "src": "api/index.js", // Sesuaikan dengan path aplikasi Anda
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/api.js" // Arahkan ke file utama di dalam folder api
+      "dest": "api/index.js" // Arahkan ke file utama di dalam folder api
     }
   ]
 }
