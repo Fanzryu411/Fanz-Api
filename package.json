@@ -1,27 +1,19 @@
 {
-  "name": "api-zhirrr",
-  "version": "1.0.0",
-  "description": "My Rest Api Projectttttt",
+  "name": "Fanz",
+  "version": "6.6.0",
+  "developer": "FanzOffc",
+  "description": "Simple Rest Api.",
   "main": "index.js",
+  "type": "commonjs",
+  "directories": {
+    "lib": "lib",
+    "message": "message"
+  },
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js "
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Zhirrr/Zhirrr-Api.git"
-  },
-  "keywords": [
-    "simple",
-    "api",
-    "rest",
-    "api"
-  ],
-  "author": "Zhirrr",
+  "author": "Fanz",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Zhirrr/Zhirrr-Api/issues"
-  },
   "dependencies": {
     "axios": "^0.21.1",
     "base-64": "^1.0.0",
