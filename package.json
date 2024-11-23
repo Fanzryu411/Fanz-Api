@@ -10,7 +10,8 @@
     "message": "message"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "vercel dev"  // Skrip untuk menjalankan secara lokal menggunakan Vercel CLI
   },
   "author": "Fanz",
   "license": "ISC",
