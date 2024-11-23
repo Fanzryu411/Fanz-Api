@@ -9,6 +9,9 @@
     "lib": "lib",
     "message": "message"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "start": "nodemon index.js",
     "vercel:dev": "vercel dev",
