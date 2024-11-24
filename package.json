@@ -4,21 +4,13 @@
   "developer": "FanzOffc",
   "description": "Simple Rest API with Vercel integration.",
   "main": "index.js",
-  "type": "commonjs",
-  "directories": {
-    "lib": "lib",
-    "message": "message"
-  },
   "scripts": {
-    "start": "node index.js", 
-    "dev": "vercel dev", 
-    "build": "echo 'No build step required'", 
-    "deploy": "echo 'Starting deployment...' && vercel deploy", 
-    "deploy:prod": "vercel --prod", 
-    "deploy:preview": "vercel --previews"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "Fanz",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
     "base-64": "^1.0.0",
@@ -54,7 +46,6 @@
   "devDependencies": {
     "vercel": "^39.1.1"
   },
-  "homepage": "https://github.com/Zhirrr/Zhirrr-Api#readme",
   "engines": {
     "node": "20.x"
   }
