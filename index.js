@@ -1,24 +1,29 @@
-var express = require('express'),
-    cors = require('cors'),
-    secure = require('ssl-express-www');
-const PORT = process.env.PORT || 8080 || 5000 || 3000
-var { color } = require('./lib/color.js')
+const express = require('express');
+const cors = require('cors');
+const secure = require('ssl-express-www');
+const { color } = require('./lib/color.js');
 
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
+const mainrouter = require('./routes/main');
+const apirouter = require('./routes/api');
 
-var app = express()
+const app = express();
+
+// Vercel uses "trust proxy" for SSL forwarding
 app.enable('trust proxy');
-app.set("json spaces",2)
-app.use(cors())
-app.use(secure)
-app.use(express.static("public"))
 
-app.use('/', mainrouter)
-app.use('/api', apirouter)
+// Format JSON responses with pretty print
+app.set("json spaces", 2);
 
-app.listen(PORT, () => {
-    console.log(color("Server running on port " + PORT,'green'))
-})
+// Middlewares
+app.use(cors());
+app.use(secure);  // Force HTTPS
+app.use(express.static("public"));
 
-module.exports = app
+// Routes
+app.use('/', mainrouter);
+app.use('/api', apirouter);
+
+// Export handler to be used by Vercel
+module.exports = (req, res) => {
+  app(req, res);
+};
