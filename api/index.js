@@ -1,2 +1,2 @@
-const app = require("../index");
+const app = require("../views/index");
 module.exports = app;
