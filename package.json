@@ -11,10 +11,10 @@
   },
   "scripts": {
     "start": "node index.js", 
-    "dev": "vercel dev",
+    "dev": "vercel dev", 
     "build": "echo 'No build step required'", 
-    "deploy": "echo 'Starting deployment...' && vercel deploy",
-    "deploy:prod": "vercel --prod",
+    "deploy": "echo 'Starting deployment...' && vercel deploy", 
+    "deploy:prod": "vercel --prod", 
     "deploy:preview": "vercel --previews"
   },
   "author": "Fanz",
