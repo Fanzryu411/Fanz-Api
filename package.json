@@ -11,11 +11,11 @@
   },
   "scripts": {
     "start": "node index.js", 
-    "dev": "vercel dev", // Menjalankan aplikasi secara lokal
+    "dev": "vercel dev",
     "build": "echo 'No build step required'", 
-    "deploy": "echo 'Starting deployment...' && vercel deploy", // Menjalankan deploy secara umum
-    "deploy:prod": "vercel --prod", // Menjalankan deploy untuk produksi
-    "deploy:preview": "vercel --previews" // Menjalankan deploy untuk preview (untuk staging atau pr)
+    "deploy": "echo 'Starting deployment...' && vercel deploy",
+    "deploy:prod": "vercel --prod",
+    "deploy:preview": "vercel --previews"
   },
   "author": "Fanz",
   "license": "ISC",
