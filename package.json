@@ -52,5 +52,8 @@
   "devDependencies": {
     "vercel": "^39.1.1"
   },
-  "homepage": "https://github.com/Zhirrr/Zhirrr-Api#readme"
+  "homepage": "https://github.com/Zhirrr/Zhirrr-Api#readme",
+  "engines": {
+    "node": "20.x"
+  }
 }
