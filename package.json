@@ -10,8 +10,10 @@
     "message": "message"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "vercel dev"  // Skrip untuk menjalankan secara lokal menggunakan Vercel CLI
+    "start": "node index.js", 
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'", 
+    "deploy": "echo 'Starting deployment...' && vercel deploy"
   },
   "author": "Fanz",
   "license": "ISC",
