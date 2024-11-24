@@ -7,8 +7,9 @@ router.use(express.static(path.join(process.cwd(), 'public')));
 
 // Rute untuk file HTML
 router.get('/', (req, res) => {
-    res.sendFile(__path + '/views/index.html')
-})
+    const filePath = path.join(process.cwd(), 'views', 'index.html');
+    res.sendFile(filePath);
+});
 
 // Rute untuk konfigurasi JSON
 router.get('/config', (req, res) => {
@@ -25,13 +26,5 @@ router.get('/config', (req, res) => {
 
     res.json(config);
 });
-
-/*/ Middleware untuk menangani rute yang tidak ada
-router.use((req, res) => {
-    res.status(404).json({
-        status: false,
-        message: 'Endpoint not found',
-    });
-});*/
 
 module.exports = router;
