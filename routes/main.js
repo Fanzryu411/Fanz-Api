@@ -1,43 +1,27 @@
-const path = require('path');
-const express = require('express');
-const router = express.Router();
+__path = process.cwd()
+
+var express = require('express');
+var router = express.Router();
 
 // Middleware untuk melayani file statis dari folder "public"
 router.use(express.static(path.join(process.cwd(), 'public')));
 
-// Rute untuk file HTML
 router.get('/', (req, res) => {
-    const filePath = path.join(process.cwd(), 'views', 'index.html');
-    res.sendFile(filePath, (err) => {
-        if (err) {
-            console.error('Error loading index.html:', err.message);
-            res.status(500).send('Internal Server Error');
-        }
-    });
-});
+    res.sendFile(__path + '/views/index.html')
+})
 
-// Rute untuk konfigurasi JSON
 router.get('/config', (req, res) => {
-    const config = {
+    config = {
         status: true,
         result: {
-            prefix: '/',
+            prefix : '/',
             namabot: 'Fanz-AI',
             namaowner: 'FanzOffc',
             instagram: '-',
-            youtube: '-',
-        },
-    };
+            youtube : '-'
+        }
+    }
+    res.json(config)
+})
 
-    res.json(config);
-});
-
-// Middleware untuk menangani rute yang tidak ada
-router.use((req, res) => {
-    res.status(404).json({
-        status: false,
-        message: 'Endpoint not found',
-    });
-});
-
-module.exports = router;
+module.exports = router
