@@ -20,7 +20,6 @@ var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
 //var TikTokScraper = require('tiktok-scraper');
-const { tikdown } = require("nayan-media-downloader");
 const { removeBg } = require('../lib/removeBg');
 const { Doodstream } = require('../lib/doodstream');
 const { swapface } = require('../lib/faceswap');
